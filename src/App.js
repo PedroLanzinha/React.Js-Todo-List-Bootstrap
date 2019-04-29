@@ -8,7 +8,7 @@ function App() {
 
   state={
     items:[],
-    id: 0,
+    id: uuid(),
     item: "",
     editItem: false
   };
@@ -19,7 +19,19 @@ function App() {
   };
   HandleSubmit = e =>{
     e.preventDefault();
-    const newItem
+    const newItem = {
+      id:this.state.id,
+      item:this.state.item
+    };
+    console.log(newItem);
+
+    const UpdatedItems = [...this.state.items,newItem];
+    this.setState({
+      items: UpdatedItems,
+      item:'',
+      id:uuid(),
+      editItem: false
+    });
 
   };
 
