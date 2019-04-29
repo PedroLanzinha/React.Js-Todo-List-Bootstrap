@@ -7,15 +7,19 @@ import uuid from 'uuid';
 function App() {
 
   state={
-    items: [],
+    items:[],
     id: 0,
-    item= "",
+    item: "",
     editItem: false
   };
   handleChange = e => {
     this.setState({
         item: e.target.value
     });
+  };
+  HandleSubmit = e =>{
+    e.preventDefault();
+    const newItem
 
   };
 
@@ -25,7 +29,8 @@ function App() {
         <div className="col-10 mx-auto col-md-8 mt-4">
         <h3 className="text-capitalize text-center">Todo Input</h3>
           <TodoInput item={this.state.item} 
-          handleChange={this.handleChange}/>
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}/>
           <TodoList/>
         </div>
       </div>
