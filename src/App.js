@@ -24,7 +24,7 @@ class App extends Component {
       id:this.state.id,
       title:this.state.item
     };
-    console.log(newItem);
+    //console.log(newItem);
 
     const UpdatedItems = [...this.state.items,newItem];
     
@@ -34,8 +34,12 @@ class App extends Component {
       id:uuid(),
       editItem: false
     });
-
   };
+  clearList =() =>{
+    this.setState({
+      items: []
+    })  
+  }
 render() {
     return (
       <div className="container">
@@ -49,6 +53,7 @@ render() {
               />
             <TodoList
               items={this.state.items }
+              clearList={this.clearList}
             />
           </div>
         </div>
