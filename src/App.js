@@ -50,8 +50,8 @@ class App extends Component {
     //console.log(id);
     const filterItems = this.state.items.filter(item => item.id !== id);
 
-    const selectedItem = this.state.item.find(
-      item => item.id === id === id);
+    const selectedItem = this.state.items.find(
+      item => item.id === id);
       console.log(selectedItem);
 
     this.setState({
@@ -72,6 +72,7 @@ render() {
               item={this.state.item} 
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
+              editItem={this.state.editItem}
               />
             <TodoList
               items={this.state.items }
