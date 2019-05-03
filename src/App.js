@@ -46,6 +46,10 @@ class App extends Component {
       items: filterItems
     })
   }
+  handleEdit = id => {
+
+  }
+
 render() {
     return (
       <div className="container">
@@ -61,6 +65,7 @@ render() {
               items={this.state.items }
               clearList={this.clearList}
               handleDelete={this.handleDelete}
+              handleEdit={this.handleEdit}
             />
           </div>
         </div>
